@@ -1,0 +1,349 @@
+/* =========================================================
+   Standalone Stylesheet - Presensi RFID SMK TI Airlangga
+   (Berjalan 100% Offline tanpa butuh Bootstrap CDN)
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-navy: #0f294a;
+    --primary-blue: #1d4ed8;
+    --primary-hover: #1e40af;
+    --accent-gold: #f59e0b;
+    --success: #15803d;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --bg-soft: #f1f5f9;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+}
+
+body {
+    background-color: var(--bg-soft);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Halaman Login --- */
+body.vh-100 {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #0f294a 0%, #1e3a8a 100%);
+}
+
+body.vh-100 .container {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* --- Container & Grid Utama --- */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+main.container {
+    flex: 1;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.col-md-4, .col-md-5, .col-md-6 {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.col-md-2 { flex: 1 1 140px; }
+.col-md-3 { flex: 1 1 200px; }
+.col-md-4 { flex: 1 1 260px; }
+.col-md-10 { flex: 3 1 400px; }
+
+/* --- Navbar --- */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+    border-bottom: 3px solid var(--accent-gold);
+    padding: 0.85rem 0;
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.navbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.navbar-collapse {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    gap: 1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 1.25rem;
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-gold);
+}
+
+/* --- Card --- */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(15, 41, 74, 0.08);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.card-header {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+    color: #ffffff;
+}
+
+.card-header.bg-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+    border-bottom: 1px solid #fde68a;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body.p-0 {
+    padding: 0;
+}
+
+/* --- Typography & Utilities --- */
+h4, h5 { color: var(--primary-navy); margin-bottom: 0.35rem; }
+.card-header h5 { color: inherit; margin: 0; }
+.text-center { text-align: center; }
+.text-muted { color: var(--text-muted); }
+.small, small { font-size: 0.85rem; }
+.fw-bold { font-weight: 700; }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.me-3 { margin-right: 1rem; }
+.d-flex { display: flex; }
+.justify-content-between { justify-content: space-between; }
+.align-items-center { align-items: center; }
+.align-items-end { align-items: flex-end; }
+.gap-1 { gap: 0.4rem; }
+.w-100 { width: 100%; }
+
+/* --- Form & Input --- */
+.form-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-dark);
+}
+
+.form-control, .form-select {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.95rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: var(--danger);
+}
+
+.invalid-feedback {
+    color: var(--danger);
+    font-size: 0.82rem;
+    margin-top: 0.3rem;
+}
+
+/* Input Khusus Tap Kartu RFID */
+input[name="nisn"].form-control-lg {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    padding: 0.9rem;
+    border: 2px dashed var(--primary-blue);
+    background-color: #f8fafc;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active { transform: scale(0.98); }
+.btn-sm { padding: 0.4rem 0.75rem; font-size: 0.82rem; }
+.btn-lg { padding: 0.8rem 1.4rem; font-size: 1.05rem; }
+
+.btn-primary { background-color: var(--primary-blue); color: #ffffff; }
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-success { background-color: var(--success); color: #ffffff; }
+.btn-success:hover { background-color: #166534; }
+
+.btn-warning { background-color: var(--warning); color: #ffffff; }
+.btn-warning:hover { background-color: #b45309; }
+
+.btn-danger { background-color: var(--danger); color: #ffffff; }
+.btn-danger:hover { background-color: #b91c1c; }
+
+.btn-secondary, .btn-dark { background-color: #475569; color: #ffffff; }
+.btn-secondary:hover, .btn-dark:hover { background-color: #334155; }
+
+.btn-outline-light {
+    border: 1.5px solid rgba(255,255,255,0.8);
+    color: #ffffff;
+    background: transparent;
+}
+.btn-outline-light:hover { background: #ffffff; color: var(--primary-navy); }
+
+.btn-outline-secondary {
+    border: 1.5px solid var(--border-color);
+    color: var(--text-dark);
+    background: #ffffff;
+}
+
+/* --- Alerts --- */
+.alert {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.alert-danger { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+.alert-success { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.alert-warning { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+
+/* --- Table --- */
+.table-responsive { width: 100%; overflow-x: auto; }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.table th, .table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table thead th {
+    background-color: #e2e8f0;
+    color: var(--primary-navy);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+code {
+    background-color: #f1f5f9;
+    padding: 0.2rem 0.45rem;
+    border-radius: 5px;
+    font-family: Consolas, monospace;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 6px;
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: auto;
+}
