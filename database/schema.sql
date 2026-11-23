@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS db_presensi_airlangga
+CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE db_presensi_airlangga;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE kelas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kelas VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE siswa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nisn VARCHAR(10) NOT NULL UNIQUE,
+    nama VARCHAR(100) NOT NULL,
+    alamat TEXT NULL,
+    kelas_id INT NOT NULL,
+    CONSTRAINT fk_siswa_kelas FOREIGN KEY (kelas_id) 
+        REFERENCES kelas(id) ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+CREATE TABLE presensi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    siswa_id INT NOT NULL,
+    tanggal_waktu DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_presensi_siswa FOREIGN KEY (siswa_id) 
+        REFERENCES siswa(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
